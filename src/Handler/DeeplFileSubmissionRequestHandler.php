@@ -27,7 +27,7 @@ final class DeeplFileSubmissionRequestHandler implements DeeplRequestHandlerInte
 
     public function getPath(): string
     {
-        return static::API_ENDPOINT;
+        return getenv('DEEPL_FILE_SUBMISSION_API_ENDPOINT') ?? static::API_ENDPOINT;
     }
 
     public function getBody(): array

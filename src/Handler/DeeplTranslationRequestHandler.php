@@ -28,7 +28,7 @@ final class DeeplTranslationRequestHandler implements DeeplRequestHandlerInterfa
 
     public function getPath(): string
     {
-        return static::API_ENDPOINT;
+        return getenv('DEEPL_TRANSLATION_API_ENDPOINT') ?? static::API_ENDPOINT;
     }
 
     public function getBody(): array

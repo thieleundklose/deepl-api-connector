@@ -25,7 +25,8 @@ final class DeeplFileRequestHandler implements DeeplRequestHandlerInterface
 
     public function getPath(): string
     {
-        return sprintf(static::API_ENDPOINT, $this->fileSubmission->getDocumentId());
+        $apiEndpoint = getenv('DEEPL_FILE_API_ENDPOINT') ?? static::API_ENDPOINT;
+        return sprintf($apiEndpoint, $this->fileSubmission->getDocumentId());
     }
 
     public function getBody(): array

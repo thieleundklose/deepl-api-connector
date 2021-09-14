@@ -22,7 +22,7 @@ final class DeeplUsageRequestHandler implements DeeplRequestHandlerInterface
 
     public function getPath(): string
     {
-        return static::API_ENDPOINT;
+        return getenv('DEEPL_USAGE_API_ENDPOINT') ?? static::API_ENDPOINT;
     }
 
     public function getBody(): array
